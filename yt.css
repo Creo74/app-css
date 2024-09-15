@@ -1,0 +1,111 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: relative; /* Make navbar relative for absolute positioning of suggestion box */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #202020;
+    color: white;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.video-list {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.video-card {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.video-info {
+    margin-top: 10px;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* Suggestion Box Styles */
+.suggestion-box {
+    position: absolute;
+    top: 50px; /* Adjust based on your navbar height */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+    color: #ff0000;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 60%;
+    }
+    .logo {
+        font-size: 1em;
+    }
+
+    .video-card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 0.8em;
+    }
+    .search-bar {
+        width: 50%;
+    }
+
+    .video-card {
+        flex: 1 1 100%;
+    }
+
+    .video-list {
+        padding: 10px;
+    }
+}
